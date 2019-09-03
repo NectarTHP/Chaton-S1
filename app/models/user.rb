@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+<<<<<<< HEAD
 
 
          has_many :orders, dependent: :destroy
@@ -135,6 +136,13 @@ class User < ApplicationRecord
            self.activation_token  = User.new_token
            self.activation_digest = User.digest(activation_token)
          end
+=======
+after_create :welcome_send
+
+def welcome_send
+	UserMailer.welcome_email(self).deliver_now
+end
+>>>>>>> delivery
 
 end
 

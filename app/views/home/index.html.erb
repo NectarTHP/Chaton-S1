@@ -1,21 +1,21 @@
-
-  <table class="table">
-    <thead>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Cat name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% index = 0 %>
+    <% while index < 5 do %>
       <tr>
-        <th scope="col">Cat name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Link</th>
+        <td> <%= "Cat number #{index}" %> </td>
+        <td> <%= "Lovely cat" %> </td>
+        <td> <%= link_to "See item", "/item/#{index}" %> </td>
       </tr>
-    </thead>
-    <tbody>
-      <% index = 0 %>
-      <% while index < 5 do %>
-        <tr>
-          <td> <%= "Cat number #{index}" %> </td>
-          <td> <%= "Lovely cat" %> </td>
-          <td> <%= link_to "See item", "/item/#{index}" %> </td>
-        </tr>
-        <% index  = index + 1 %>
-      <% end %>
-    </tbody>
-  </table>
+      <% index  = index + 1 %>
+    <% end %>
+  </tbody>
+</table>
