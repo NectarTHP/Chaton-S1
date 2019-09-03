@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="h3 mb-3 font-weight-normal text-center">My profile</h2>
+      <div class="card mt-2">
+        <div class="card-body">
+          <img class="card-img-top" style="width:150px;" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Pseudo</h4>
+          <h5 class="card-subtitle mb-2 text-muted">First_name Last_name</h5>
+          <hr>
+          <p class="card-text"><%= @user.email%></p>
+          <p class="card-text">Member #<%= @user.id%> since: <%=@user.created_at%></p>
+          <hr>
+          <a href="<%=edit_user_registration_path%>" class="btn btn-primary btn-sm">Manage account</a>
+          <a href="#" class="btn btn-primary btn-sm">Edit profile</a>
+        </div>
+      </div>
+    </div>

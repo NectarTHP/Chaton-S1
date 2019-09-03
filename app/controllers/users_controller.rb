@@ -3,14 +3,20 @@ class UsersController < ApplicationController
  before_action :authenticate_user
  before_action :is_logged_user
 
- puts '$'*60; puts "'users_controller' has been called"; puts '$'*60
+  puts '$'*60; puts "'users_controller' has been called"; puts '$'*60
 
   def index
+    puts '$'*60; puts "'users#index' has been called";puts '$'*60
+    @users = User.all
   end
 
   def show
+    puts '$'*60; puts "'users#show' has been called"; puts '$'*60
     @user = current_user
-    @user_events = User.find(params[:id]).event_admin
+    unless is_connected?(@user)
+      flash[:alert] = "Restricted access."
+      redirect_to root_path
+    end
   end
 
   private
@@ -29,6 +35,13 @@ class UsersController < ApplicationController
         flash[:danger] = "You can only visit your profile."
         redirect_to root_path
       end
+  end
+  
+  def is_connected?(user)
+    if current_user == user
+      return true
+    end
+    false
   end
 
 end
