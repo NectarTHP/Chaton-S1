@@ -1,5 +1,5 @@
 class LineItem < ApplicationRecord
-    belongs_to :product
+  belongs_to :product
   belongs_to :cart
   # belongs_to :order
 
@@ -15,4 +15,5 @@ class LineItem < ApplicationRecord
   def valid_quantity_and_price?
     !quantity.to_s.strip.empty? && !product.price.to_s.strip.empty?
   end
+
 end
