@@ -1,21 +1,12 @@
-7.times do |n|
-    name  = Faker::Name.name
-    email = "example-#{n + 1}@railstutorial.org"
-    password = 'password'
-    User.create!(name:  name,
-                 email: email,
-                 password:              password,
-                 password_confirmation: password,)
-end
-   
 
- require 'table_print'
+Product.delete_all
+Order.delete_all
 
 10.times do
     Product.create(
-        picture: Faker::Code.npi,
-        price: rand(1..100),
-        description: Faker::Lorem.words(number: 5),
+        picture:Faker::LoremPixel.image(size: "100x100", is_gray: false, category: 'cats'),
+        price:Faker::Number.number(digits: 1),
+        description: Faker::Lorem.paragraph,
         name: Faker::Food.dish
     )
     puts "created 10 products"
