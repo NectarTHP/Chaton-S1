@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
- before_action :authenticate_user
- before_action :is_logged_user
+  before_action :authenticate_user
+  before_action :is_logged_user
 
   puts '$'*60; puts "'users_controller' has been called"; puts '$'*60
 
@@ -37,11 +37,11 @@ class UsersController < ApplicationController
       end
   end
   
-  def is_connected?(user)
-    if current_user == user
-      return true
-    end
-    false
-  end
+  #  def is_connected?(user)
+  #    if current_user == user
+  #     return true
+  #   end
+  #   false
+  # end
 
 end
