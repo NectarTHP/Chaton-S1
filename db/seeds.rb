@@ -1,35 +1,57 @@
+require 'faker'
 
-7.times do |n|
-    name  = Faker::Name.name
-    email = "example-#{n + 1}@railstutorial.org"
-    password = 'password'
-    User.create!(name:  name,
-                 email: email,
-                 password:              password,
-                 password_confirmation: password)
+User.destroy_all
+Product.destroy_all
+Order.destroy_all
+LineItem.destroy_all
+Order.destroy_all
+Cart.destroy_all
+    
+
+
+20.times do 
+    User.create!(email: Faker::Internet.email, password: 123456, name: Faker::Name.name)
 end
-   
+puts "10 users were created"
 
- require 'table_print'
 
-10.times do
+20.times do
+    Cart.create(
+        # user: rand(1..10)
+    )
+end
+puts "created 10 carts" 
+
+20.times do
     Product.create(
         picture: Faker::Code.npi,
         price: rand(1..100),
-        description: Faker::Lorem.words(number: 5),
+        description: Faker::Lorem.sentence,
         name: Faker::Food.dish
     )
-    puts "created 10 products"
-end
- 
+ end
+ puts "created 10 products"
 
+ 20.times do
+     Order.create(
+        #  user: rand(1..10),
+         description: Faker::Lorem.sentence,
+         pay_method: rand(1..3)
+     )
+ end
+ puts "created 10 orders"
 
-10.times do
-    Order.create(
-        user_id: rand(1..10),
-        description: Faker::Lorem.words(number: 5),
-        pay_method: rand(1..3)
-       
+ 20.times do
+    LineItem.create(
+        quantity: rand(1..10),
+        # product: rand(1..10),
+        # cart: rand(1..10),
+        order_id: rand(1..10),
     )
-    puts "created 10 orders"
 end
+puts "created 10 line items" 
+
+
+
+
+
