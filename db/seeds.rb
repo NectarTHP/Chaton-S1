@@ -9,7 +9,6 @@
 end
    
 
- require 'table_print'
 
 10.times do
     Product.create(
