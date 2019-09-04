@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_124618) do
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+  end 
 
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity"
