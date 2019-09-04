@@ -16,4 +16,9 @@ class LineItem < ApplicationRecord
     !quantity.to_s.strip.empty? && !product.price.to_s.strip.empty?
   end
 
+  def destroy
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+  end
+
 end
