@@ -12,47 +12,47 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <a class="navbar-brand text-white" href="/">Nectar de châton</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand text-dark" href="/">Nectar de châton</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-          <a href="<%=new_user_registration_path=%>">Register</a>
+            <a href="<%=new_user_registration_path=%>">Register</a>
           </li>
           <li class="ml-4 nav-item">
-          <a href="<%=new_user_session_path=%>">Log in</a>
+            <a href="<%=new_user_session_path=%>">Log in</a>
           </li>
-          <li class="ml-4 nav-item">
-          <%= link_to("Log out", destroy_user_session_path, method: :delete)%>
-          </li>
+          <% if user_signed_in?%>
+            <li class="ml-4 nav-item">
+              <a href="<%=user_path(current_user.id)%>">My profile</a>
+            </li>
+            <li class="ml-4 nav-item">
+              <%= link_to("Log out", destroy_user_session_path, method: :delete)%>
+            </li>
+          <%end%>
+
         </ul>
       </div>
     </nav>
-
-<!-- Add message display for every page -->
-    
-<% puts notice%>
-<% puts alert%>
-
-  <% if notice%>
-  <div class="alert alert-success alert-dismissible">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <%= notice %>
-  </div>
-  <%end%>
-
-  <% if alert%>
-  <div class="alert alert-danger alert-dismissible">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <%= alert %>
-  </div>
-  <%end%>
-
-<!-- Don't write anything below this line -->
-
+    <!-- Add message display for every page -->
+    <% puts notice%>
+    <% puts alert%>
+    <% if notice%>
+      <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= notice %>
+      </div>
+    <%end%>
+    <% if alert%>
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= alert %>
+      </div>
+    <%end%>
+    <!-- Don't write anything below this line -->
     <%= yield %>
-    </body>
-  </html>
+  </body>
+</html>
