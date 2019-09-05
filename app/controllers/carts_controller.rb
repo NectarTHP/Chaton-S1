@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def show
-    @cart = Cart.find_by(user_id: current_user.id)
-    @line_items = LineItem.where(cart_id: @cart.id)
+    @cart = Cart.find_by(user_id: current_user)
+    @line_items = LineItem.where(cart_id: @cart)
     @products = []
     @line_items.each do |line_item|
       @products << Product.find(line_item.product_id)

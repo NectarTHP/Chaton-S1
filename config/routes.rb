@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'products/show'
 	root 'home#index'
 	devise_for :users
+	resources :charges
   resources :users
 	resources :orders
   resources :products do

@@ -1,5 +1,6 @@
 <!-- source : https://bootsnipp.com/snippets/yP7qe -->
 
+
 <h2 class="h3 mb-3 font-weight-normal text-center">Cart full of love</h2>
 <div class="container">
   <table id="cart" class="table table-hover table-condensed">
@@ -49,8 +50,15 @@
       <tr>
         <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
         <td colspan="2" class="hidden-xs"></td>
-        <td class="hidden-xs text-center"><strong><%=@cart.sub_total%></strong></td>
-        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+        <td class="hidden-xs text-center"><strong><%=%></strong></td>
+      
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Adopt a cat"
+          data-amount="5"
+          data-locale="auto"></script>
+      
+      
       </tr>
     </tfoot>
   </table>
