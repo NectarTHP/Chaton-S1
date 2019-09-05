@@ -14,7 +14,8 @@ class LineItemsController < ApplicationController
     puts quantity
     puts "cart_id"
     puts cart_id
-    LineItem.create(cart_id: cart_id, product_id: product_id)
+    LineItem.create(cart_id: cart_id, product_id: product_id, quantity: quantity)
+    redirect_to cart_path(current_user.id)
   end
 
   def create

@@ -5,11 +5,11 @@ class LineItem < ApplicationRecord
 
   # LOGIC
    def total_price
-     if valid_quantity_and_price?
+     #if valid_quantity_and_price?
        quantity.to_s.to_d * product.price.to_s.to_d
-     else
-       0.0
-     end
+     #else
+       #0.0
+     #end
    end
 
   def valid_quantity_and_price?

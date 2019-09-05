@@ -2,6 +2,5 @@
 <%@products.each do |product|%>
   #<%=product.id%> - <%=product.name%> - <%=product.price%> -
   <%=link_to("Add to cart", new_product_line_item_path(product.id))%>
-<br>
-  <%end%>
-<p>Find me in app/views/products/index.html.erb</p>
+  <br>
+<%end%>
