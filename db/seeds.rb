@@ -1,5 +1,21 @@
 require 'faker'
 
+#seed for cart testing
+Product.create(
+ picture: Faker::Code.npi,
+ price: rand(1..100),
+ description: Faker::Lorem.sentence,
+ name: "product cart tester"
+)
+user = User.create!(name: "cart tester", email: "cart2322@test.com", password: "azerty")
+cart = Cart.create!(user_id: user.id)
+LineItem.create!(cart_id: cart.id, product_id: 183)
+
+=begin
+    
+rescue => exception
+    
+end
 User.destroy_all
 Product.destroy_all
 Order.destroy_all
@@ -50,6 +66,7 @@ puts "created 10 carts"
     )
 end
 puts "created 10 line items" 
+=end
 
 
 
