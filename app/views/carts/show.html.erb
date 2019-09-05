@@ -1,24 +1,20 @@
 <!-- source : https://bootsnipp.com/snippets/yP7qe -->
-
-
 <h2 class="h3 mb-3 font-weight-normal text-center">Cart full of love</h2>
 <div class="container">
   <table id="cart" class="table table-hover table-condensed">
     <thead>
       <tr>
         <th style="width:50%">Product</th>
-        <th style="width:10%"> </th>
+        <th style="width:0%"> </th>
         <th style="width:8%"> </th>
         <th style="width:22%" class="text-center">Price</th>
-        <th style="width:10%"></th>
+        <th style="width:20%"></th>
       </tr>
     </thead>
-            <%@products.each do |product|%>
-
-    <tbody>
-      <tr>
-
-        <td data-th="Product">
+    <%@products.each do |product|%>
+      <tbody>
+        <tr>
+          <td data-th="Product">
             <div class="row">
               <div class="col-sm-2 hidden-xs"><img src="<%=product.picture%>" alt="cat-image" class="img-responsive"/></div>
               <div class="col-sm-10">
@@ -27,22 +23,18 @@
               </div>
             </div>
           </td>
-        <td data-th="Price"> </td>
-        <td data-th="Quantity">
-          <!--input type="number" class="form-control text-center" value="1"-->
-        </td>
-        <td data-th="Subtotal" class="text-center"><%=product.price%></td>
-        <td class="actions" data-th="">
-          <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-          <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-          <%= link_to "Delete", root_path%>
-        </td>
-
-      </tr>
-
-    </tbody>
-        <%end%>
-
+          <td data-th="Price"> </td>
+          <td data-th="Quantity">
+            <!--input type="number" class="form-control text-center" value="1"-->
+          </td>
+          <td data-th="Subtotal" class="text-center"><%=product.price%></td>
+          <td class="actions" data-th="">
+            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    <%end%>
     <tfoot>
       <tr class="visible-xs">
         <td class="text-center"><strong> </strong></td>
@@ -50,15 +42,14 @@
       <tr>
         <td><a href="<%=products_path%>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
         <td colspan="2" class="hidden-xs"></td>
-        <td class="hidden-xs text-center"><strong><%=%></strong></td>
-       <td class="hidden-xs text-center"><strong>Total: <%=@cart.sub_total%> euros</strong></td>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                <td class="hidden-xs text-center"><strong>Total: <%=@cart.sub_total%> euros</strong></td>
+
+        <td><a href="#" class="btn btn-success">Adopt a cat now <i class="fa fa-angle-right"></i></a></td>
+        <!--script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="dummy"
           data-description="Adopt a cat"
           data-amount="<%=@cart.sub_total*100%>"
-          data-locale="auto"></script>
-      
-      
+          data-locale="auto"></script-->
       </tr>
     </tfoot>
   </table>
