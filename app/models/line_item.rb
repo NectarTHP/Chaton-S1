@@ -1,11 +1,7 @@
 class LineItem < ApplicationRecord
     belongs_to :product
     belongs_to :cart
-<<<<<<< HEAD
-    # belongs_to :order
-=======
     #belongs_to :order
->>>>>>> delivery
 
   # LOGIC
    def total_price
