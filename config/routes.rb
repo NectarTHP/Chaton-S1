@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'products/index'
-  get 'products/show'
-	root 'home#index'
+	root 'products#index'
 	devise_for :users
 	resources :charges
   resources :users

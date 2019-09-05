@@ -48,12 +48,12 @@
         <td class="text-center"><strong> </strong></td>
       </tr>
       <tr>
-        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td><a href="<%=products_path%>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
         <td colspan="2" class="hidden-xs"></td>
         <td class="hidden-xs text-center"><strong><%=%></strong></td>
        <td class="hidden-xs text-center"><strong>Total: <%=@cart.sub_total%> euros</strong></td>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-key="dummy"
           data-description="Adopt a cat"
           data-amount="<%=@cart.sub_total*100%>"
           data-locale="auto"></script>
