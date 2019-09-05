@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-Product.delete_all
-Order.delete_all
-=======
 require 'faker'
 
 User.destroy_all
@@ -11,7 +6,7 @@ Order.destroy_all
 LineItem.destroy_all
 Order.destroy_all
 Cart.destroy_all
-    
+  
 
 
 20.times do 
@@ -19,7 +14,6 @@ Cart.destroy_all
 end
 puts "10 users were created"
 
->>>>>>> delivery
 
 20.times do
     Cart.create(
@@ -30,15 +24,9 @@ puts "created 10 carts"
 
 20.times do
     Product.create(
-<<<<<<< HEAD
-        picture:Faker::LoremPixel.image(size: "100x100", is_gray: false, category: 'cats'),
-        price:Faker::Number.number(digits: 1),
-        description: Faker::Lorem.paragraph,
-=======
         picture: Faker::Code.npi,
         price: rand(1..100),
         description: Faker::Lorem.sentence,
->>>>>>> delivery
         name: Faker::Food.dish
     )
  end
