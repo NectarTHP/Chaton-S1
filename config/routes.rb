@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 	root 'home#index'
 	devise_for :users
 	resources :users
-	resources :carts
 	resources :orders
-	resources :products
-	resources :line_items
 	resources :charges
+	resources :product
+  resources :carts do
+    resources :line_items
+  end
 end

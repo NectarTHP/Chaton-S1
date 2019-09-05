@@ -12,7 +12,13 @@ class LineItem < ApplicationRecord
      end
    end
 
-   def valid_quantity_and_price?
-     !quantity.to_s.strip.empty? && !product.price.to_s.strip.empty?
-   end
- end
+  def valid_quantity_and_price?
+    !quantity.to_s.strip.empty? && !product.price.to_s.strip.empty?
+  end
+
+  def destroy
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+  end
+
+end
