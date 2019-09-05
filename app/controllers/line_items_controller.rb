@@ -2,10 +2,22 @@ class LineItemsController < ApplicationController
   def index
   end
 
-  def create
+  def new
+    puts "$"*60; puts "line_items#new called"
+    
+    product_id = params[:product_id]
+    quantity = 1
+    cart_id = Cart.all.find_by(user_id: current_user.id).id
+    puts "product_id: "
+    puts product_id
+    puts "quantity: "
+    puts quantity
+    puts "cart_id"
+    puts cart_id
+    LineItem.create(cart_id: cart_id, product_id: product_id)
   end
 
-  def new
+  def create
   end
 
   def show
