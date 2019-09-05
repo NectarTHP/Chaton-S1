@@ -45,4 +45,10 @@ class UsersController < ApplicationController
     false
   end
 
+  def create_cart
+    puts self
+    puts self.id
+    Cart.create!(user_id: self.id)
+  end
+
 end

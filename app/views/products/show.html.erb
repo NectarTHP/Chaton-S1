@@ -8,14 +8,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img class="card-img-top" src=<%= @products.picture %> alt="Card image cap" style="max-width:100%">  
+      <img class="card-img-top" src=<%= @product.picture %> alt="Card image cap" style="max-width:100%">  
     </div>
     <div class="col-sm">
-      <h2><%= @products.name %></h2>
-                    <p><%= @products.description %></p>
+      <h2><%= @product.name %></h2>
+                    <p><%= @product.description %></p>
                     <hr>
-                    <h2 class="text-right"><%= @products.price %> € </h2>
-                    <%=link_to "Add to cart", new_product_line_item_path(@products.id), :class=> "btn btn-primary btn-lg"%>
+                    <h2 class="text-right"><%= @product.price %> € </h2>
+                    <%=link_to "Add to cart", new_line_item_path(@product.id), :class=> "btn btn-primary btn-lg"%>
                     <hr>
     </div>
 

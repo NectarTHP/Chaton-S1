@@ -2,6 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
+  after_create :create_cart
+
+
   puts "$"*60;puts "user.rb called";puts "$"*60
 
   has_one_attached :avatar #This is for active storage, to use an avatar picture.

@@ -42,15 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_070633) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.decimal "price"
-    t.string "image_url"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity"
     t.integer "product_id"
