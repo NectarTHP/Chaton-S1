@@ -15,8 +15,7 @@
                     <p><%= @products.description %></p>
                     <hr>
                     <h2 class="text-right"><%= @products.price %> € </h2>
-                    <button class="btn btn-primary btn-lg ">Add to Cart</button>
-                    <%#=link_to ("Add to cart", new_product_line_item_path(product.id)), :class=> "btn btn-primary btn-lg"%>
+                    <%=link_to "Add to cart", new_product_line_item_path(@products.id), :class=> "btn btn-primary btn-lg"%>
                     <hr>
     </div>
 
