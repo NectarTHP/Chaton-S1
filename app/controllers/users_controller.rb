@@ -37,11 +37,11 @@ class UsersController < ApplicationController
       end
   end
   
-  #  def is_connected?(user)
-  #    if current_user == user
-  #     return true
-  #   end
-  #   false
-  # end
+    def is_connected?(user)
+      if current_user == user
+       return true
+     end
+     false
+   end
 
 end
