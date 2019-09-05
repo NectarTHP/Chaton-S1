@@ -6,12 +6,12 @@ class HomeController < ApplicationController
   end
 
   
-
-  def is_connected?(user)
-    if current_user == user
-      return true
-    end
-    false
-  end
+# This method is wrong according to our mentor.
+  # def is_connected?(user)
+  #   if current_user == user
+  #     return true
+  #   end
+  #   false
+  # end
 
 end
