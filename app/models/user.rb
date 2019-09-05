@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    after_create :welcome_send
+    # after_create :welcome_send
   has_many :orders
   
    def welcome_send
