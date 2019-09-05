@@ -2,11 +2,10 @@
 Welcome to our super online adoption service "Nectar de Chatôn", where Homo-sapiens and Felis-cats find each other!
 
 The online version can be directly accessed at:
-
-HEROKU LINK 
+https://nectar-thp.herokuapp.com/ 
 
 or you can download the local version's full repository at:
-GitHub LINK
+https://github.com/NectarTHP/Chaton-S1.git
 
 
 To run the program locally, please follow these steps:
