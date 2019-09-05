@@ -31,7 +31,7 @@ Order.destroy_all
 LineItem.destroy_all
 Order.destroy_all
 Cart.destroy_all
-    
+  
 
 
 20.times do 

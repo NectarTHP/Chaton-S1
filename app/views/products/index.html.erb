@@ -1,0 +1,6 @@
+<h1>Products#index</h1>
+<%@products.each do |product|%>
+  #<%=product.id%> - <%=product.name%> - <%=product.price%> -
+  <%=link_to("Add to cart", new_product_line_item_path(product.id))%>
+  <br>
+<%end%>
