@@ -1,5 +1,5 @@
 # README
-Welcome to our super online adoption service "Nectar de Chatôn", where Homo-sapiens and Felis-cats find each other!
+Welcome to our super online adoption service "Nectar de Chatôn", where Homo-sapiens and Felis-cats find each other!!
 
 The online version can be directly accessed at:
 https://nectar-thp.herokuapp.com/ 
