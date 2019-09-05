@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user
+  before_action :authenticate_user!
   before_action :is_logged_user
 
   puts '$'*60; puts "'users_controller' has been called"; puts '$'*60
@@ -13,10 +13,11 @@ class UsersController < ApplicationController
   def show
     puts '$'*60; puts "'users#show' has been called"; puts '$'*60
     @user = current_user
-    unless is_connected?(@user)
-      flash[:alert] = "Restricted access."
-      redirect_to root_path
-    end
+    # Change that, according to our mentor: 
+    # unless is_connected?(@user)
+    #   flash[:alert] = "Restricted access."
+    #   redirect_to root_path
+    # end
   end
 
   private
